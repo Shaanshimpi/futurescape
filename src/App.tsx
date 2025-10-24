@@ -11,7 +11,11 @@ import {
   ArrowRight,
   Star,
   Zap,
-  MessageSquare
+  MessageSquare,
+  CreditCard,
+  BarChart3,
+  GraduationCap,
+  Smartphone
 } from 'lucide-react'
 
 // Mock Pages Components
@@ -20,6 +24,10 @@ import AdminPanel from './pages/AdminPanel'
 import BrandPortal from './pages/BrandPortal'
 import PublicGallery from './pages/PublicGallery'
 import MessagingSystem from './pages/MessagingSystem'
+import PaymentSystem from './pages/PaymentSystem'
+import CommunityForum from './pages/CommunityForum'
+import AnalyticsDashboard from './pages/AnalyticsDashboard'
+import MobileAppMockup from './pages/MobileAppMockup'
 
 function App() {
   return (
@@ -31,6 +39,10 @@ function App() {
         <Route path="/brand-portal" element={<BrandPortal />} />
         <Route path="/public-gallery" element={<PublicGallery />} />
         <Route path="/messaging" element={<MessagingSystem />} />
+        <Route path="/payment" element={<PaymentSystem />} />
+        <Route path="/community" element={<CommunityForum />} />
+        <Route path="/analytics" element={<AnalyticsDashboard />} />
+        <Route path="/mobile-app" element={<MobileAppMockup />} />
       </Routes>
     </Router>
   )
@@ -78,6 +90,38 @@ function LandingPage() {
       path: "/messaging",
       gradient: "from-indigo-500 to-purple-500",
       features: ["Real-time Chat", "File Sharing", "Project Communication", "Message History"]
+    },
+    {
+      title: "Payment System",
+      description: "Pricing tiers, earnings tracking, and transaction management",
+      icon: CreditCard,
+      path: "/payment",
+      gradient: "from-emerald-500 to-teal-500",
+      features: ["Pricing Plans", "Earnings Tracking", "Transaction History", "Payment Methods"]
+    },
+    {
+      title: "Community Forum",
+      description: "Forums, mentorship, and community events",
+      icon: GraduationCap,
+      path: "/community",
+      gradient: "from-rose-500 to-pink-500",
+      features: ["Discussion Forums", "Mentorship Program", "Community Events", "Knowledge Sharing"]
+    },
+    {
+      title: "Analytics Dashboard",
+      description: "Advanced analytics for artists and administrators",
+      icon: BarChart3,
+      path: "/analytics",
+      gradient: "from-violet-500 to-purple-500",
+      features: ["Performance Metrics", "Audience Insights", "Revenue Analytics", "Content Analytics"]
+    },
+    {
+      title: "Mobile App",
+      description: "Native mobile app interface mockup",
+      icon: Smartphone,
+      path: "/mobile-app",
+      gradient: "from-cyan-500 to-blue-500",
+      features: ["Native iOS Design", "Mobile-First UX", "Touch Interactions", "App Store Ready"]
     }
   ]
 
@@ -132,7 +176,7 @@ function LandingPage() {
                 <div className="flex items-center justify-center mb-3 sm:mb-4">
                   <Users className="h-6 w-6 sm:h-8 sm:w-8 text-purple-400" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">5</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">10</h3>
                 <p className="text-gray-300 text-sm sm:text-base">Demo Interfaces</p>
               </div>
             </div>
