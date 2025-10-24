@@ -126,23 +126,10 @@ function LandingPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Header */}
       <header className="relative z-10 p-4 sm:p-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex items-center justify-center">
           <div className="flex items-center space-x-2">
             <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-purple-400" />
             <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">Futurescape Studios</h1>
-          </div>
-          <div className="hidden sm:flex items-center space-x-4">
-            <Button variant="ghost" className="text-white hover:text-purple-300">
-              Features
-            </Button>
-            <Button variant="ghost" className="text-white hover:text-purple-300">
-              Pricing
-            </Button>
-          </div>
-          <div className="sm:hidden">
-            <Button variant="ghost" size="sm" className="text-white hover:text-purple-300">
-              Menu
-            </Button>
           </div>
         </div>
       </header>
