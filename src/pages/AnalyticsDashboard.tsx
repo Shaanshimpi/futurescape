@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,33 +7,15 @@ import {
   TrendingUp, 
   TrendingDown, 
   Users, 
-  Eye, 
   Heart, 
-  MessageSquare, 
   Download, 
-  Calendar, 
-  Filter, 
   RefreshCw,
   Target,
-  Award,
   Clock,
   DollarSign,
   Palette,
-  Building2,
   Shield,
-  Globe,
-  Smartphone,
-  Monitor,
-  Tablet,
-  MousePointer,
-  Share2,
-  Bookmark,
-  Star,
-  Zap,
-  Activity,
-  PieChart,
-  LineChart,
-  BarChart
+  Activity
 } from 'lucide-react';
 
 interface AnalyticsData {
@@ -199,7 +181,7 @@ const mockAdminAnalytics = {
 export default function AnalyticsDashboard() {
   const [activeTab, setActiveTab] = useState<'artist' | 'admin'>('artist');
   const [timeRange, setTimeRange] = useState<'7d' | '30d' | '90d' | '1y'>('30d');
-  const [data, setData] = useState(mockAnalyticsData);
+  const [data] = useState(mockAnalyticsData);
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';

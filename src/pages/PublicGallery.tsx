@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { 
   Image as ImageIcon, 
   Search, 
-  Filter, 
   Heart, 
   Eye, 
   Share2,
@@ -13,7 +12,6 @@ import {
   Palette,
   Sparkles,
   TrendingUp,
-  Award,
   Grid3X3,
   List,
   MoreHorizontal

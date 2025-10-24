@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { 
   Users, 
   MessageSquare, 
@@ -14,29 +13,20 @@ import {
   Heart, 
   Share2, 
   Bookmark, 
-  Flag, 
   MoreVertical,
-  TrendingUp,
-  Award,
-  Calendar,
-  Clock,
-  UserPlus,
-  GraduationCap,
-  Lightbulb,
-  Palette,
+  Pin,
+  Lock,
   Camera,
   Video,
   FileText,
-  Link,
-  ThumbsUp,
-  Reply,
-  Edit,
-  Trash2,
-  Pin,
-  Lock,
-  Globe,
   Eye,
-  MessageCircle
+  MessageCircle,
+  GraduationCap,
+  Lightbulb,
+  Palette,
+  Calendar,
+  Award,
+  UserPlus
 } from 'lucide-react';
 
 interface ForumPost {
@@ -327,7 +317,7 @@ export default function CommunityForum() {
   const [activeTab, setActiveTab] = useState<'forums' | 'mentorship' | 'events'>('forums');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [showNewPost, setShowNewPost] = useState(false);
+  const [_showNewPost, setShowNewPost] = useState(false);
 
   const filteredPosts = mockPosts.filter(post => {
     const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;

@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { 
@@ -9,8 +8,6 @@ import {
   Image as ImageIcon,
   Sparkles,
   ArrowRight,
-  Star,
-  Zap,
   MessageSquare,
   CreditCard,
   BarChart3,

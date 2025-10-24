@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -12,23 +12,13 @@ import {
   Camera, 
   Image as ImageIcon,
   MessageSquare,
-  Settings,
   Palette,
   TrendingUp,
-  Users,
   Star,
-  Share2,
   Bookmark,
-  Filter,
   Grid3X3,
   List,
-  ChevronLeft,
-  ChevronRight,
   MoreHorizontal,
-  Play,
-  Pause,
-  Volume2,
-  VolumeX,
   Wifi,
   Battery,
   Signal
@@ -135,7 +125,7 @@ const mockFeaturedArtists: FeaturedArtist[] = [
 export default function MobileAppMockup() {
   const [activeTab, setActiveTab] = useState<'home' | 'search' | 'create' | 'activity' | 'profile'>('home');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [selectedArtwork, setSelectedArtwork] = useState<MobileArtwork | null>(null);
+  const [_selectedArtwork, setSelectedArtwork] = useState<MobileArtwork | null>(null);
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';

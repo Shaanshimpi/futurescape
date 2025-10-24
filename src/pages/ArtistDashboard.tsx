@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { 
   Upload, 
-  Image as ImageIcon, 
   BarChart3, 
   MessageSquare, 
   Settings,
@@ -13,7 +12,6 @@ import {
   Heart,
   Share2,
   Edit,
-  Trash2,
   CheckCircle,
   Clock,
   XCircle

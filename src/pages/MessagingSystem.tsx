@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -15,9 +15,6 @@ import {
   Search,
   Filter,
   Star,
-  Archive,
-  Trash2,
-  Clock,
   Check,
   CheckCheck,
   Image as ImageIcon,

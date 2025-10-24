@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { 
   Building2, 
@@ -9,11 +9,8 @@ import {
   MessageSquare,
   Star,
   MapPin,
-  Calendar,
-  DollarSign,
   Users,
-  Palette,
-  Sparkles
+  Palette
 } from 'lucide-react'
 import { mockArtists, mockArtworks } from '@/data/mockData'
 

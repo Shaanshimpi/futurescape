@@ -6,25 +6,22 @@ import {
   CreditCard, 
   Check, 
   Star, 
-  Zap, 
   Crown, 
   Building2,
-  Users,
   Shield,
   Clock,
   DollarSign,
   TrendingUp,
-  Award,
-  MessageSquare,
-  Palette,
-  BarChart3,
-  Settings,
   FileText,
   Download,
   Calendar,
   Target,
   Globe,
-  Smartphone
+  Smartphone,
+  Palette,
+  Settings,
+  BarChart3,
+  MessageSquare
 } from 'lucide-react';
 
 interface PricingTier {
@@ -196,7 +193,7 @@ const mockEarnings = {
 };
 
 export default function PaymentSystem() {
-  const [selectedTier, setSelectedTier] = useState<string>('artist-pro');
+  const [_selectedTier, setSelectedTier] = useState<string>('artist-pro');
   const [activeTab, setActiveTab] = useState<'pricing' | 'earnings' | 'transactions'>('pricing');
 
   const formatCurrency = (amount: number) => {
