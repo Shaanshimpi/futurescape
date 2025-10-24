@@ -133,10 +133,10 @@ function LandingPage() {
           </div>
           <div className="hidden sm:flex items-center space-x-4">
             <Button variant="ghost" className="text-white hover:text-purple-300">
-              About
+              Features
             </Button>
             <Button variant="ghost" className="text-white hover:text-purple-300">
-              Contact
+              Pricing
             </Button>
           </div>
           <div className="sm:hidden">
