@@ -45,12 +45,13 @@ interface MobileArtwork {
   isBookmarked: boolean;
 }
 
-interface MobileStory {
+interface FeaturedArtist {
   id: number;
-  artist: string;
+  name: string;
   avatar: string;
-  image: string;
-  isViewed: boolean;
+  specialty: string;
+  verified: boolean;
+  followers: number;
 }
 
 const mockMobileArtworks: MobileArtwork[] = [
@@ -96,34 +97,38 @@ const mockMobileArtworks: MobileArtwork[] = [
   }
 ];
 
-const mockStories: MobileStory[] = [
+const mockFeaturedArtists: FeaturedArtist[] = [
   {
     id: 1,
-    artist: "Alex Chen",
+    name: "Alex Chen",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=300&fit=crop&auto=format",
-    isViewed: false
+    specialty: "Character Design",
+    verified: true,
+    followers: 12400
   },
   {
     id: 2,
-    artist: "Sarah Johnson",
+    name: "Sarah Johnson",
     avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=300&fit=crop&auto=format",
-    isViewed: true
+    specialty: "Environment Art",
+    verified: true,
+    followers: 8920
   },
   {
     id: 3,
-    artist: "Mike Chen",
+    name: "Mike Chen",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=300&fit=crop&auto=format",
-    isViewed: false
+    specialty: "Concept Art",
+    verified: true,
+    followers: 15600
   },
   {
     id: 4,
-    artist: "Emma Rodriguez",
+    name: "Emma Rodriguez",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=200&h=300&fit=crop&auto=format",
-    isViewed: true
+    specialty: "Fantasy Art",
+    verified: true,
+    followers: 9800
   }
 ];
 
@@ -181,28 +186,32 @@ export default function MobileAppMockup() {
                 </div>
               </div>
 
-              {/* Stories Section */}
+              {/* Featured Artists Section */}
               <div className="px-4 py-3 border-b border-white/10">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-sm font-semibold text-white">Featured Artists</h3>
+                  <Button variant="ghost" size="sm" className="text-purple-400 text-xs p-1">
+                    View All
+                  </Button>
+                </div>
                 <div className="flex space-x-3 overflow-x-auto">
-                  <div className="flex-shrink-0 w-16 text-center">
-                    <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-1">
-                      <Plus className="h-6 w-6 text-white" />
-                    </div>
-                    <p className="text-xs text-gray-400">Your Story</p>
-                  </div>
-                  {mockStories.map((story) => (
-                    <div key={story.id} className="flex-shrink-0 w-16 text-center">
-                      <div className={`w-14 h-14 rounded-full p-0.5 mb-1 ${
-                        story.isViewed ? 'bg-gray-600' : 'bg-gradient-to-r from-purple-500 to-pink-500'
-                      }`}>
+                  {mockFeaturedArtists.map((artist) => (
+                    <div key={artist.id} className="flex-shrink-0 w-16 text-center">
+                      <div className="relative w-14 h-14 mx-auto mb-1">
                         <Avatar className="w-full h-full">
-                          <AvatarImage src={story.avatar} alt={story.artist} />
-                          <AvatarFallback className="bg-gray-600 text-white text-xs">
-                            {story.artist.split(' ').map(n => n[0]).join('')}
+                          <AvatarImage src={artist.avatar} alt={artist.name} />
+                          <AvatarFallback className="bg-purple-500 text-white text-xs">
+                            {artist.name.split(' ').map(n => n[0]).join('')}
                           </AvatarFallback>
                         </Avatar>
+                        {artist.verified && (
+                          <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                            <Star className="h-2 w-2 text-white fill-current" />
+                          </div>
+                        )}
                       </div>
-                      <p className="text-xs text-gray-400 truncate">{story.artist}</p>
+                      <p className="text-xs text-gray-400 truncate">{artist.name}</p>
+                      <p className="text-xs text-purple-400">{artist.specialty}</p>
                     </div>
                   ))}
                 </div>
@@ -297,14 +306,25 @@ export default function MobileAppMockup() {
                       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                       <input
                         type="text"
-                        placeholder="Search artists, artworks..."
+                        placeholder="Search artists, artworks, styles..."
                         className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400"
                       />
                     </div>
                     
                     <div className="space-y-4">
                       <div>
-                        <h3 className="text-sm font-semibold text-white mb-3">Trending</h3>
+                        <h3 className="text-sm font-semibold text-white mb-3">Popular Categories</h3>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {['Character Design', 'Environment Art', 'Concept Art', 'Fantasy Art', 'Sci-Fi', 'Portraits'].map((category) => (
+                            <Badge key={category} variant="outline" className="text-xs text-gray-400 border-gray-600">
+                              {category}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-sm font-semibold text-white mb-3">Trending Artworks</h3>
                         <div className="grid grid-cols-2 gap-3">
                           {mockMobileArtworks.slice(0, 2).map((artwork) => (
                             <div key={artwork.id} className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 overflow-hidden">
