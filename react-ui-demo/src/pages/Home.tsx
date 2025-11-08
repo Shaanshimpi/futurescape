@@ -84,7 +84,7 @@ export const HomePage: React.FC = () => {
     <div className="relative">
       <Hero
         eyebrow="The AI Art Collaboration Hub"
-        headline="Where AI Meets Art — Uniting Visionary Creators Across the Globe"
+        headline="Where AI Meets Art"
         subheading="Discover, collaborate, and innovate with AI artists shaping the future of creativity."
         primaryCta={{ label: 'Join the AI Art Revolution', href: '/about' }}
         secondaryCta={{ label: 'Submit Your Work', href: '/artists#apply' }}
