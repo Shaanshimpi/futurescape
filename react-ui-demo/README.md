@@ -95,6 +95,26 @@ src/
 └── App.tsx           # Main application component
 ```
 
+### Mock assets
+
+The gallery and profile views reference files under `public/mocks`. These are placeholders only—drop in high-resolution JPG/PNG assets matching the paths used in the mock JSON to see real imagery. When integrating Payload or another asset pipeline, replace the static imports with URLs provided by the backend. By default the demo points to royalty-free Unsplash images and DummyImage logo placeholders so the UI renders without any local assets.
+
+### Environment variables
+
+To enable live Unsplash inspiration feed (optional):
+
+```
+VITE_UNSPLASH_ACCESS_KEY=your_access_key
+VITE_UNSPLASH_APP_NAME=futurescape-mvp
+```
+
+Create the keys via the [Unsplash developer dashboard](https://unsplash.com/documentation#search-photos).
+
+### Analytics & integration notes
+
+- Key interactions log to the browser console (`[Home]`, `[Gallery]`, `[Artists]`, `[CTA]`, etc.) to simulate future analytics hooks.
+- Look for `TODO` comments throughout the components to identify where real services (analytics, messaging, CMS data) should be wired in once the backend is ready.
+
 ## 🔧 Available Scripts
 
 - `npm run dev` - Start development server
@@ -105,11 +125,8 @@ src/
 ## 📋 Demo Data
 
 The demo includes:
-- **20+ Mock Artworks** with varied styles and themes
-- **5 Sample Artists** with complete profiles
-- **3 Brand Companies** for collaboration examples
-- **Realistic Conversations** in messaging system
-- **Transaction History** in payment system
+- Richly typed mock datasets (`src/data/`) representing artworks, artists, collections, testimonials, taxonomies, and site settings
+- Console instrumentation showing how filters, pagination, and CTA clicks can be tracked before analytics integration
 
 ## 🎯 Target Users
 

@@ -54,7 +54,18 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-slate-100 antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white;
+  }
+  p {
+    @apply text-white/90;
   }
 }
 
@@ -72,10 +83,11 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #f5f3ff 0%, #c4b5fd 45%, #60a5fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 10px 30px rgba(76, 29, 149, 0.55), 0 0 18px rgba(37, 99, 235, 0.45);
 }
 
 /* Smooth animations */
